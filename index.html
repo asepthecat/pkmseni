@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanggar Seni Kinanti Sekar</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     LANGUAGE BAR
+══════════════════════════════════════════ -->
+<div id="lang-bar">
+  <span class="lang-label" data-i18n="lang_select">Select Language</span>
+  <button class="lang-btn active" id="btn-id" onclick="setLang('id')">
+    <span>🇮🇩</span> Indonesia
+  </button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">
+    <span>🇬🇧</span> English
+  </button>
+  <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">
+    <span>🇫🇷</span> Français
+  </button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#home" class="nav-brand">
+    <span class="brand-icon">✦</span>
+    <span class="brand-text">Kinanti Sekar</span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" data-i18n="nav_home">Home</a></li>
+    <li><a href="#programs" data-i18n="nav_programs">Programs</a></li>
+    <li><a href="#about" data-i18n="nav_about">About</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <a href="#programs" class="nav-cta" data-i18n="nav_cta">Join Us</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span data-i18n="hero_eyebrow">Indonesian Cultural Arts Studio</span>
+      <span class="eyebrow-line"></span>
+    </div>
+    <h1 class="hero-title">
+      <span data-i18n="hero_title1">Where Culture</span><br>
+      <em data-i18n="hero_title2">Comes Alive</em>
+    </h1>
+    <p class="hero-desc" data-i18n="hero_desc">
+      Preserving and nurturing the beauty of Indonesian traditional arts through dedicated training, performances, and cultural programs for all ages.
+    </p>
+    <div class="hero-actions">
+      <a href="#programs" class="btn-primary" data-i18n="hero_cta1">Explore Programs</a>
+      <a href="#about" class="btn-ghost" data-i18n="hero_cta2">Our Story</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-val">12+</span>
+        <span class="stat-key" data-i18n="stat_programs">Programs</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-val">500+</span>
+        <span class="stat-key" data-i18n="stat_students">Students</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-val">20+</span>
+        <span class="stat-key" data-i18n="stat_years">Years</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-ring ring-1"></div>
+    <div class="hero-visual-ring ring-2"></div>
+    <div class="hero-visual-ring ring-3"></div>
+    <div class="hero-visual-center">
+      <span class="hero-emoji">🎭</span>
+      <span class="hero-visual-label" data-i18n="hero_visual_label">Sanggar Seni</span>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span data-i18n="scroll_hint">Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROGRAMS SECTION
+══════════════════════════════════════════ -->
+<section id="programs" class="programs-section">
+  <div class="section-intro">
+    <span class="section-tag" data-i18n="prog_tag">Our Programs</span>
+    <h2 class="section-title" data-i18n="prog_title">Program Sanggar</h2>
+    <p class="section-sub" data-i18n="prog_sub">Discover our rich selection of cultural arts programs, each carefully crafted to honor tradition while welcoming every level of learner.</p>
+    <div class="title-deco"></div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="prog-filters">
+    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Programs</button>
+    <button class="filter-btn" data-filter="dance" data-i18n="filter_dance">Dance</button>
+    <button class="filter-btn" data-filter="music" data-i18n="filter_music">Music</button>
+    <button class="filter-btn" data-filter="theatre" data-i18n="filter_theatre">Theatre</button>
+    <button class="filter-btn" data-filter="craft" data-i18n="filter_craft">Craft</button>
+  </div>
+
+  <!-- PROGRAM CARDS GRID -->
+  <div class="programs-grid" id="programs-grid">
+
+    <!-- CARD 1: Tari Klasik Jawa -->
+    <article class="prog-card reveal" data-category="dance" data-program="0">
+      <div class="prog-card-header">
+        <div class="prog-icon-wrap prog-color-1"><span class="prog-icon">💃</span></div>
+        <span class="prog-badge prog-badge-dance" data-i18n="badge_dance">Dance</span>
+      </div>
+      <h3 class="prog-name" data-i18n="prog1_name">Tari Klasik Jawa</h3>
+      <p class="prog-short" data-i18n="prog1_short">Classical Javanese Dance rooted in Kraton palace traditions — graceful, meditative, and deeply spiritual.</p>
+      <div class="prog-meta">
+        <div class="prog-meta-item">
+          <span class="meta-icon">🗓</span>
+          <span data-i18n="prog1_sched">Mon, Wed, Fri · 15:00–17:00</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="meta-icon">👥</span>
+          <span data-i18n="prog1_level">All levels · Age 7+</span>
+        </div>
+      </div>
+      <div class="prog-card-actions">
+        <button class="btn-detail" onclick="openModal(0)" data-i18n="btn_detail">View Details</button>
+        <a href="https://wa.me/628112688000?text=I%20want%20to%20join%20Tari%20Klasik%20Jawa" target="_blank" class="btn-wa">
+          <span class="wa-icon">💬</span>
+          <span data-i18n="btn_wa">WhatsApp</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- CARD 2: Tari Kontemporer -->
+    <article class="prog-card reveal" data-category="dance" data-program="1">
+      <div class="prog-card-header">
+        <div class="prog-icon-wrap prog-color-2"><span class="prog-icon">🌀</span></div>
+        <span class="prog-badge prog-badge-dance" data-i18n="badge_dance">Dance</span>
+      </div>
+      <h3 class="prog-name" data-i18n="prog2_name">Tari Kontemporer</h3>
+      <p class="prog-short" data-i18n="prog2_short">Contemporary dance blending modern movement with Indonesian artistic expressions for the creative generation.</p>
+      <div class="prog-meta">
+        <div class="prog-meta-item">
+          <span class="meta-icon">🗓</span>
+          <span data-i18n="prog2_sched">Tue, Thu · 16:00–18:00</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="meta-icon">👥</span>
+          <span data-i18n="prog2_level">Intermediate · Age 12+</span>
+        </div>
+      </div>
+      <div class="prog-card-actions">
+        <button class="btn-detail" onclick="openModal(1)" data-i18n="btn_detail">View Details</button>
+        <a href="https://wa.me/628112688000?text=I%20want%20to%20join%20Tari%20Kontemporer" target="_blank" class="btn-wa">
+          <span class="wa-icon">💬</span>
+          <span data-i18n="btn_wa">WhatsApp</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- CARD 3: Gamelan -->
+    <article class="prog-card reveal" data-category="music" data-program="2">
+      <div class="prog-card-header">
+        <div class="prog-icon-wrap prog-color-3"><span class="prog-icon">🪘</span></div>
+        <span class="prog-badge prog-badge-music" data-i18n="badge_music">Music</span>
+      </div>
+      <h3 class="prog-name" data-i18n="prog3_name">Gamelan Orchestra</h3>
+      <p class="prog-short" data-i18n="prog3_short">Master the ancient art of Gamelan — the iconic bronze percussion orchestra at the heart of Javanese culture.</p>
+      <div class="prog-meta">
+        <div class="prog-meta-item">
+          <span class="meta-icon">🗓</span>
+          <span data-i18n="prog3_sched">Sat, Sun · 09:00–11:00</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="meta-icon">👥</span>
+          <span data-i18n="prog3_level">All levels · Age 10+</span>
+        </div>
+      </div>
+      <div class="prog-card-actions">
+        <button class="btn-detail" onclick="openModal(2)" data-i18n="btn_detail">View Details</button>
+        <a href="https://wa.me/628112688000?text=I%20want%20to%20join%20Gamelan" target="_blank" class="btn-wa">
+          <span class="wa-icon">💬</span>
+          <span data-i18n="btn_wa">WhatsApp</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- CARD 4: Sendratari / Theatre -->
+    <article class="prog-card reveal" data-category="theatre" data-program="3">
+      <div class="prog-card-header">
+        <div class="prog-icon-wrap prog-color-4"><span class="prog-icon">🎭</span></div>
+        <span class="prog-badge prog-badge-theatre" data-i18n="badge_theatre">Theatre</span>
+      </div>
+      <h3 class="prog-name" data-i18n="prog4_name">Sendratari</h3>
+      <p class="prog-short" data-i18n="prog4_short">Dance-drama performance art that tells epic stories — combining music, costume, and movement into one unified spectacle.</p>
+      <div class="prog-meta">
+        <div class="prog-meta-item">
+          <span class="meta-icon">🗓</span>
+          <span data-i18n="prog4_sched">Sat · 13:00–16:00</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="meta-icon">👥</span>
+          <span data-i18n="prog4_level">Advanced · Age 15+</span>
+        </div>
+      </div>
+      <div class="prog-card-actions">
+        <button class="btn-detail" onclick="openModal(3)" data-i18n="btn_detail">View Details</button>
+        <a href="https://wa.me/628112688000?text=I%20want%20to%20join%20Sendratari" target="_blank" class="btn-wa">
+          <span class="wa-icon">💬</span>
+          <span data-i18n="btn_wa">WhatsApp</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- CARD 5: Angklung -->
+    <article class="prog-card reveal" data-category="music" data-program="4">
+      <div class="prog-card-header">
+        <div class="prog-icon-wrap prog-color-5"><span class="prog-icon">🎵</span></div>
+        <span class="prog-badge prog-badge-music" data-i18n="badge_music">Music</span>
+      </div>
+      <h3 class="prog-name" data-i18n="prog5_name">Angklung Ensemble</h3>
+      <p class="prog-short" data-i18n="prog5_short">Learn the UNESCO-recognized bamboo instrument of West Java — joyful, communal, and perfect for all ages.</p>
+      <div class="prog-meta">
+        <div class="prog-meta-item">
+          <span class="meta-icon">🗓</span>
+          <span data-i18n="prog5_sched">Sun · 10:00–12:00</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="meta-icon">👥</span>
+          <span data-i18n="prog5_level">All levels · Age 5+</span>
+        </div>
+      </div>
+      <div class="prog-card-actions">
+        <button class="btn-detail" onclick="openModal(4)" data-i18n="btn_detail">View Details</button>
+        <a href="https://wa.me/628112688000?text=I%20want%20to%20join%20Angklung" target="_blank" class="btn-wa">
+          <span class="wa-icon">💬</span>
+          <span data-i18n="btn_wa">WhatsApp</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- CARD 6: Batik -->
+    <article class="prog-card reveal" data-category="craft" data-program="5">
+      <div class="prog-card-header">
+        <div class="prog-icon-wrap prog-color-6"><span class="prog-icon">🎨</span></div>
+        <span class="prog-badge prog-badge-craft" data-i18n="badge_craft">Craft</span>
+      </div>
+      <h3 class="prog-name" data-i18n="prog6_name">Batik Tulis Workshop</h3>
+      <p class="prog-short" data-i18n="prog6_short">Hand-drawn Batik — the revered Indonesian textile art using wax-resist dyeing. Create your own masterpiece.</p>
+      <div class="prog-meta">
+        <div class="prog-meta-item">
+          <span class="meta-icon">🗓</span>
+          <span data-i18n="prog6_sched">Wed, Fri · 10:00–13:00</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="meta-icon">👥</span>
+          <span data-i18n="prog6_level">All levels · Age 10+</span>
+        </div>
+      </div>
+      <div class="prog-card-actions">
+        <button class="btn-detail" onclick="openModal(5)" data-i18n="btn_detail">View Details</button>
+        <a href="https://wa.me/628112688000?text=I%20want%20to%20join%20Batik%20Workshop" target="_blank" class="btn-wa">
+          <span class="wa-icon">💬</span>
+          <span data-i18n="btn_wa">WhatsApp</span>
+        </a>
+      </div>
+    </article>
+
+  </div><!-- end programs-grid -->
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════════ -->
+<section id="about" class="about-section">
+  <div class="about-bg-deco"></div>
+  <div class="about-inner">
+    <div class="about-text">
+      <span class="section-tag" data-i18n="about_tag">About Us</span>
+      <h2 class="section-title" data-i18n="about_title">Dedicated to the Living Tradition</h2>
+      <p data-i18n="about_p1">Sanggar Seni Kinanti Sekar was founded with a singular mission: to preserve, transmit, and celebrate the richness of Indonesian traditional arts in a world that is rapidly changing.</p>
+      <p data-i18n="about_p2">Our studio is home to master instructors with decades of experience in Javanese, Sundanese, and Balinese arts. We welcome students from across the world — beginners, enthusiasts, and professional artists alike.</p>
+      <div class="about-highlights">
+        <div class="about-hl">
+          <span class="hl-icon">🏆</span>
+          <div>
+            <strong data-i18n="hl1_title">Award-Winning Studio</strong>
+            <span data-i18n="hl1_desc">Recognized by Indonesia's Ministry of Culture</span>
+          </div>
+        </div>
+        <div class="about-hl">
+          <span class="hl-icon">🌏</span>
+          <div>
+            <strong data-i18n="hl2_title">International Outreach</strong>
+            <span data-i18n="hl2_desc">Programs designed for global cultural tourists</span>
+          </div>
+        </div>
+        <div class="about-hl">
+          <span class="hl-icon">👨‍🏫</span>
+          <div>
+            <strong data-i18n="hl3_title">Master Instructors</strong>
+            <span data-i18n="hl3_desc">30+ years of combined teaching experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual-block">
+      <div class="about-card-stack">
+        <div class="about-card about-card-1">
+          <span class="about-card-icon">🎋</span>
+          <span data-i18n="about_card1">Javanese Arts</span>
+        </div>
+        <div class="about-card about-card-2">
+          <span class="about-card-icon">🌸</span>
+          <span data-i18n="about_card2">Sundanese Arts</span>
+        </div>
+        <div class="about-card about-card-3">
+          <span class="about-card-icon">🌺</span>
+          <span data-i18n="about_card3">Balinese Arts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════ -->
+<section id="contact" class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title" data-i18n="cta_title">Ready to Begin Your Journey?</h2>
+    <p class="cta-sub" data-i18n="cta_sub">Contact us via WhatsApp or Email and our team will guide you to the perfect program.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/628112688000?text=Hello%2C%20I%27m%20interested%20in%20joining%20Kinanti%20Sekar" target="_blank" class="cta-btn cta-wa">
+        <span class="cta-btn-icon">💬</span>
+        <span data-i18n="cta_wa">Chat on WhatsApp</span>
+      </a>
+      <a href="mailto:info@kinantisekar.id?subject=Program%20Inquiry&body=Hello%2C%20I%20am%20interested%20in%20your%20programs." class="cta-btn cta-email">
+        <span class="cta-btn-icon">✉️</span>
+        <span data-i18n="cta_email">Send an Email</span>
+      </a>
+    </div>
+    <div class="cta-info">
+      <span>📍 <span data-i18n="cta_address">Yogyakarta, Indonesia</span></span>
+      <span>📞 +62 811 2688 000</span>
+      <span>🕐 <span data-i18n="cta_hours">Mon–Sun, 08:00–20:00</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-brand">
+    <span class="brand-icon">✦</span>
+    <span class="brand-text">Kinanti Sekar</span>
+  </div>
+  <p class="footer-tagline" data-i18n="footer_tagline">Preserving the Soul of Indonesian Culture</p>
+  <div class="footer-links">
+    <a href="#home" data-i18n="nav_home">Home</a>
+    <a href="#programs" data-i18n="nav_programs">Programs</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 Sanggar Seni Kinanti Sekar. <span data-i18n="footer_rights">All Rights Reserved.</span></p>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     PROGRAM DETAIL MODAL
+══════════════════════════════════════════ -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <div class="modal-icon-wrap" id="modal-icon-wrap">
+        <span id="modal-icon">🎭</span>
+      </div>
+      <div>
+        <span class="modal-badge" id="modal-badge">Dance</span>
+        <h2 class="modal-title" id="modal-title">Program Title</h2>
+      </div>
+    </div>
+
+    <!-- TRAILER VIDEO EMBED -->
+    <div class="modal-trailer" id="modal-trailer-wrap">
+      <div class="trailer-placeholder" id="trailer-placeholder">
+        <div class="trailer-play-btn" id="trailer-play-btn">
+          <span class="play-icon">▶</span>
+        </div>
+        <div class="trailer-label">
+          <span data-i18n="trailer_watch">Watch Trailer</span>
+        </div>
+        <div class="trailer-overlay-text" id="trailer-title-overlay"></div>
+      </div>
+      <div class="trailer-video-wrap hidden" id="trailer-video-wrap">
+        <iframe id="trailer-iframe" width="100%" height="100%" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- TABS: Description / Schedule / Details -->
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="desc" data-i18n="tab_desc">Description</button>
+      <button class="modal-tab" data-tab="sched" data-i18n="tab_sched">Schedule</button>
+      <button class="modal-tab" data-tab="detail" data-i18n="tab_detail">Details</button>
+    </div>
+    <div class="modal-tab-content" id="tab-desc">
+      <p id="modal-desc"></p>
+    </div>
+    <div class="modal-tab-content hidden" id="tab-sched">
+      <div class="sched-table" id="modal-sched-table"></div>
+    </div>
+    <div class="modal-tab-content hidden" id="tab-detail">
+      <div class="detail-grid" id="modal-details"></div>
+    </div>
+
+    <!-- MODAL CTA -->
+    <div class="modal-cta">
+      <a id="modal-wa-btn" href="#" target="_blank" class="cta-btn cta-wa" style="flex:1;">
+        <span>💬</span> <span data-i18n="cta_wa">Chat on WhatsApp</span>
+      </a>
+      <a id="modal-email-btn" href="#" class="cta-btn cta-email" style="flex:1;">
+        <span>✉️</span> <span data-i18n="cta_email">Send an Email</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CHATBOT
+══════════════════════════════════════════ -->
+<div id="chatbot-fab" onclick="toggleChatbot()" title="Chat with us">
+  <span class="fab-icon" id="fab-icon">💬</span>
+  <span class="fab-pulse"></span>
+</div>
+
+<div id="chatbot-window" class="chatbot-window hidden">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <span class="chat-avatar">🎭</span>
+      <div>
+        <strong>Sekar Assistant</strong>
+        <span class="chat-status" data-i18n="chat_online">Online · Ready to help</span>
+      </div>
+    </div>
+    <button class="chat-close-btn" onclick="toggleChatbot()">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-quick" id="chat-quick"></div>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" class="chat-input" data-i18n-ph="chat_placeholder" placeholder="Type your question…" onkeydown="if(event.key==='Enter') sendChat()"/>
+    <button class="chat-send-btn" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
