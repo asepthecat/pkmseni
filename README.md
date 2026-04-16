@@ -138,9 +138,7 @@ See `LICENSE` for more information.
 
 ## Author
 
-**Sepi Ananda**  
-Information Systems Student  
-UPN "Veteran" Yogyakarta
+
 
 ---
 
